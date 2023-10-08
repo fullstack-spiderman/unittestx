@@ -2,7 +2,7 @@
 authors = ["Arjun KayalMoni <arjun.umathanu@gmail.com>"]
 description = "A custom unittest runner for Python"
 license = "MIT"
-name = "pyunitx"
+name = "unittestx"
 readme = "README.md"
 version = "0.1.0"
 
@@ -15,4 +15,6 @@ build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]
 
 [tool.poetry.scripts]
-pyunitx = 'pyunitx.app:main'
+unittestx = 'unittestx.app:main'
+
+repository = "https://github.com/fullstack-spiderman/unittestx"

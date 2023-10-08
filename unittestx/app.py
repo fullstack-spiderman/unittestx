@@ -5,7 +5,7 @@ from typing import Literal, LiteralString, TextIO
 from termcolor import colored
 
 
-class PyUnitXTestResult(unittest.TestResult):
+class UnitTestXTestResult(unittest.TestResult):
     def __init__(self, stream, descriptions, verbosity) -> None:
         super().__init__()
         self.stream: TextIO | None = stream
@@ -59,10 +59,10 @@ class PyUnitXTestResult(unittest.TestResult):
             f"  SKIPPED({self.test_statuses['SKIPPED']})"
 
 
-class PyUnitXTestRunner(unittest.TextTestRunner):
+class UnitTestXTestRunner(unittest.TextTestRunner):
 
-    def _makeResult(self) -> PyUnitXTestResult:
-        return PyUnitXTestResult(
+    def _makeResult(self) -> UnitTestXTestResult:
+        return UnitTestXTestResult(
             self.stream, self.descriptions, self.verbosity
         )
 
@@ -98,7 +98,7 @@ def main() -> None:
     args: argparse.Namespace = parser.parse_args()
 
     test_suite: unittest.TestSuite = load_tests(args.start_dir, args.pattern)
-    runner = PyUnitXTestRunner(verbosity=args.verbosity)
+    runner = UnitTestXTestRunner(verbosity=args.verbosity)
     result: unittest.TestResult = runner.run(test_suite)
     summary: str = result.get_summary()
     print("=" * 55)
