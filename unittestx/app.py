@@ -1,3 +1,4 @@
+import os
 import unittest
 import argparse
 from typing import Literal, LiteralString, TextIO
@@ -70,7 +71,8 @@ class UnitTestXTestRunner(unittest.TextTestRunner):
 def load_tests(start_dir, pattern) -> unittest.TestSuite:
     test_loader = unittest.TestLoader()
     test_suite: unittest.TestSuite = test_loader.discover(
-        start_dir=start_dir, pattern=pattern)
+        start_dir=os.path.join(os.getcwd(), start_dir), pattern=pattern
+    )
     return test_suite
 
 
@@ -79,7 +81,7 @@ def main() -> None:
     parser.add_argument(
         '-s', '--start-dir',
         type=str,
-        default='tests',
+        default="tests",
         help='Starting directory for test discovery'
     )
     parser.add_argument(
