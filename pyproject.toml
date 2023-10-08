@@ -1,12 +1,10 @@
 [tool.poetry]
 authors = ["Arjun KayalMoni <arjun.umathanu@gmail.com>"]
 description = "A custom unittest runner for Python"
+license = "MIT"
 name = "pyunitx"
 readme = "README.md"
 version = "0.1.0"
-
-[tool.poetry.license]
-name = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
