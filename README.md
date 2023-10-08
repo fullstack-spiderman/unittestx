@@ -30,7 +30,7 @@ Run your tests using PyUnitX by simply invoking the pyunitx command.
 For example:
 
 ```bash
-pyunitx discover -s tests -p "test_*.py" -v
+pyunitx -s tests -p "test_*.py"
 ```
 
 You can pass the following arguments to the pyunitx command:
@@ -38,7 +38,6 @@ You can pass the following arguments to the pyunitx command:
 ```bash
 -s or --start-directory: Specify the directory to start test discovery (default is '.').
 -p or --pattern: Specify the test file pattern (default is 'test*.py').
--v or --verbosity: Specify the verbosity level (default is 1).
 For more options and details, use the pyunitx --help command.
 ```
 
