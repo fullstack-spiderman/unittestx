@@ -1,0 +1,20 @@
+[tool.poetry]
+authors = ["Arjun KayalMoni <arjun.umathanu@gmail.com>"]
+description = "A custom unittest runner for Python"
+name = "pyunitx"
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.license]
+name = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+termcolor = "^2.3.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.poetry.scripts]
+pyunitx = 'pyunitx.app:main'
