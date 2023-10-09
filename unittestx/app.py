@@ -71,11 +71,12 @@ class UnitTestXTestRunner(unittest.TextTestRunner):
 def load_tests(start_dir, pattern) -> unittest.TestSuite:
     test_loader = unittest.TestLoader()
 
-    base_directory: str = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), '..'))
+    base_directory: str = os.getcwd()
+
+    start_directory: str = os.path.join(base_directory, start_dir)
 
     test_suite: unittest.TestSuite = test_loader.discover(
-        start_dir=os.path.join(base_directory, start_dir), pattern=pattern
+        start_dir=start_directory, pattern=pattern
     )
     return test_suite
 
